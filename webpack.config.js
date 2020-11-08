@@ -39,6 +39,16 @@ module.exports = {
                     { loader: 'postcss-loader' }
                 ]
             },
+
+            {
+                // 画像の扱い
+                test: /\.(png|jpe?g|gif)$/,
+                loader: 'url-loader',
+                options: {
+                    limit: 8000,
+                    name: 'images/[name].[ext]'
+                }
+            }
         ]
     }
 }
