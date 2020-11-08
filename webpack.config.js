@@ -11,4 +11,15 @@ module.exports = {
         publicPath: '',
     },
     devtool: 'eval-cheap-module-source-map',
+
+    module: {
+        rules: [
+            {
+                // JavaScriptファイルのコンパイル
+                test: /\.js$/,
+                loader: 'babel-loader',
+                exclude: /node_modules/,
+            }
+        ]
+    }
 }
