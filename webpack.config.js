@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -50,5 +51,13 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: __dirname + '/src/index.html', // スターティングポイントのHTMLファイルを指定
+            filename: 'index.html', // 生成するファイル
+            inject: 'body', // アセットのインジェクト先
+        })
+    ]
 }
