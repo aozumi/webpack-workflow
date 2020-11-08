@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     devServer: { port: 3000 },
 
     entry: './src/index.js',
@@ -11,7 +11,6 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: '',
     },
-    devtool: 'eval-cheap-module-source-map',
 
     module: {
         rules: [
